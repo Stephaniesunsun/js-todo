@@ -12,13 +12,12 @@ $white: #ffffff;
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  //max-width: 420px;
-  //max-height: 740px;
 }
 body {
   background-image: linear-gradient($dark-green, $green);
+  background-size: cover;
   height: 100vh;
-  overflow: hidden;
+  //overflow: hidden;
 }
 header {
   h1 {
@@ -54,8 +53,8 @@ form {
 }
 .todo-container {
   width: 80%;
-  height: 100%;
-  margin: 1em auto;
+  height: auto; //no overflow
+  margin: 1em auto 0 auto;
   //background-image: linear-gradient($yellow, $orange);
 }
 
@@ -98,4 +97,24 @@ form {
 .complete {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+.filter-todo {
+  width: 160px;
+  padding: 0.45em 3em 0.45em 0.5em;
+  background: rgba($green, 0.3);
+  border-color: $dark-green;
+  margin-left: 1em;
+  appearance: none;
+}
+
+.filter {
+  position: relative;
+}
+.fa-chevron-circle-down {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  height: 100%;
+  pointer-events: none;
 }

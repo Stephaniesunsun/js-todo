@@ -8,8 +8,8 @@
 
 body {
   background-image: linear-gradient(#264653, #2a9d8f);
-  height: 100vh;
-  overflow: hidden; }
+  background-size: cover;
+  height: 100vh; }
 
 header h1 {
   text-align: center;
@@ -39,8 +39,8 @@ form {
 
 .todo-container {
   width: 80%;
-  height: 100%;
-  margin: 1em auto; }
+  height: auto;
+  margin: 1em auto 0 auto; }
 
 .todo-item {
   margin-top: 0.5em;
@@ -73,3 +73,21 @@ form {
 .complete {
   text-decoration: line-through;
   opacity: 0.5; }
+
+.filter-todo {
+  width: 160px;
+  padding: 0.45em 3em 0.45em 0.5em;
+  background: rgba(42, 157, 143, 0.3);
+  border-color: #264653;
+  margin-left: 1em;
+  appearance: none; }
+
+.filter {
+  position: relative; }
+
+.fa-chevron-circle-down {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  height: 100%;
+  pointer-events: none; }

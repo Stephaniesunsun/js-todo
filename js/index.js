@@ -2,9 +2,12 @@
 const todoinput=document.querySelector(".submit-input");
 const todobutton=document.querySelector(".submit-btn");
 const todoitems=document.querySelector(".todo-items");
+const filtertodo=document.querySelector(".filter-todo");
+
 //event listeners
 todobutton.addEventListener('click',addTodo);
 todoitems.addEventListener('click',checkStatus);
+filtertodo.addEventListener('click',filterTodo);
 //functions
 
 function addTodo(event){
@@ -46,5 +49,36 @@ function checkStatus(e){
     }else if(status==='todo-complete'){
         parent.classList.add('complete');
         
+    }
+}
+
+function filterTodo(e){
+    //console.log(e.target.value);
+    const option=e.target.value;
+    const items=todoitems.childNodes;
+    console.log(items);
+    if(option==='all'){
+        items.forEach(function(item){
+            item.style.display="flex"; //because switch back from other options,need to restore the display property
+          });
+        
+    }
+    else if(option==='completed'){
+      items.forEach(function(item){
+          if(item.classList.contains('complete')){
+            item.style.display="flex";//need to restore display
+          }else if(!item.classList.contains('complete')){
+              item.style.display="none";
+          }
+        });
+    }
+    else if(option==='uncompleted'){
+        items.forEach(function(item){
+            if(item.classList.contains('complete')){
+                item.style.display="none";
+            }else if(!item.classList.contains('complete')){
+                item.style.display="flex";
+            }
+          });
     }
 }

@@ -15,16 +15,25 @@
     </header>
 
     <form>
-        <input type="text" class="submit-input" placeholder="please add something here"/>
-        <button class="submit-btn" type="submit">
-            <img src="svg/plus-solid.svg" alt="add-button">
-        </button>
-    </form>
+        <div>
+            <input type="text" class="submit-input" placeholder="please add something here"/>
+            <button class="submit-btn" type="submit">
+                <img src="svg/plus-solid.svg" alt="add-button">
+             </button>
+        </div>
 
-    <div class="todo-container">
-        <ul class="todo-items">
-        </ul>
-    </div>
+        <div class="filter">
+            <select class="filter-todo">
+                <option value="all">all</option>
+                <option value="completed">completed</option>
+                <option value="uncompleted">uncompleted</option>
+                
+            </select>
+            <i class="fas fa-chevron-circle-down"></i>
+        </div>
+
+    </form>
+    <div class="todo-container"><ul class="todo-items"></ul></div>
 
     <script src="js/index.js"></script>
 </body>
